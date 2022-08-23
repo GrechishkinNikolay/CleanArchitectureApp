@@ -1,22 +1,28 @@
 package ru.ngrechishkin.cleanarchitectureapp.data.repository
 
 import android.content.Context
-import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserName
+import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameGet
 import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameSave
 import ru.ngrechishkin.cleanarchitectureapp.domain.repository.IUserRepository
 
-private const val SHARED_PREFS_NAME = "sharedPrefName"
+private const val SHARED_PREFS_FILE_NAME = "sharedPrefFileName"
+private const val KEY_FIRST_NAME = "firstName"
+private const val KEY_LAST_NAME = "lastName"
 
-class UserRepositoryImpl(private val context: Context): IUserRepository {
+class UserRepositoryImpl(context: Context): IUserRepository {
 
-    val sharedPreferences = context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+    private val sharedPreferences = context.getSharedPreferences(SHARED_PREFS_FILE_NAME, Context.MODE_PRIVATE)
 
     override fun saveUserName(username: UserNameSave): Boolean {
-        TODO("На чём закончил")
+        sharedPreferences.edit().putString(KEY_FIRST_NAME, username.name).apply()
+        return true
     }
 
-    override fun getUserName(): UserName {
-        return UserName("123", "345")
+    override fun getUserName(): UserNameGet {
+        val firstName = sharedPreferences.getString(KEY_FIRST_NAME, "")
+        val lastName = sharedPreferences.getString(KEY_LAST_NAME, "")
+
+        return UserNameGet(firstName!!, lastName!!)
     }
 
 }

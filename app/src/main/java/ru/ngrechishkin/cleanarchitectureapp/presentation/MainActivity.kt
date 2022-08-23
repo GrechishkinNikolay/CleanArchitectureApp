@@ -12,9 +12,9 @@ import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val userRepository: IUserRepository = UserRepositoryImpl()
-    private val getUserNameUseCase = GetUserNameUseCase(userRepository)
-    private val saveUserNameUseCase = SaveUserNameUseCase(userRepository)
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(applicationContext)}
+    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {GetUserNameUseCase(userRepository)}
+    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {SaveUserNameUseCase(userRepository)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
