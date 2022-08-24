@@ -1,18 +1,20 @@
 package ru.ngrechishkin.cleanarchitectureapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import ru.ngrechishkin.cleanarchitectureapp.R
 import ru.ngrechishkin.cleanarchitectureapp.data.repository.UserRepositoryImpl
+import ru.ngrechishkin.cleanarchitectureapp.data.storage.sharedPrefs.SharedPrefUserStorage
 import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameSave
-import ru.ngrechishkin.cleanarchitectureapp.domain.repository.IUserRepository
 import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.GetUserNameUseCase
 import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(applicationContext)}
+    private val sharedPrefUserStorage by lazy(LazyThreadSafetyMode.NONE) {SharedPrefUserStorage(applicationContext)}
+
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(sharedPrefUserStorage)}
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {GetUserNameUseCase(userRepository)}
     private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {SaveUserNameUseCase(userRepository)}
 
