@@ -5,16 +5,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import ru.ngrechishkin.cleanarchitectureapp.R
 import ru.ngrechishkin.cleanarchitectureapp.data.repository.UserRepositoryImpl
-import ru.ngrechishkin.cleanarchitectureapp.data.storage.sharedPrefs.SharedPrefUserStorage
-import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameSave
+import ru.ngrechishkin.cleanarchitectureapp.data.storage.sharedPrefs.SharedPrefUserDAO
+import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameSaveDTO
 import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.GetUserNameUseCase
 import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val sharedPrefUserStorage by lazy(LazyThreadSafetyMode.NONE) {SharedPrefUserStorage(applicationContext)}
-
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(sharedPrefUserStorage)}
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(SharedPrefUserDAO(applicationContext))}
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {GetUserNameUseCase(userRepository)}
     private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {SaveUserNameUseCase(userRepository)}
 
@@ -29,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         saveDataButton.setOnClickListener {
             val name = dataEditText.text.toString()
-            val isSuccess = saveUserNameUseCase.execute(UserNameSave(name))
+            val isSuccess = saveUserNameUseCase.execute(UserNameSaveDTO(name))
             dataTextView.text = "Is success save? - $isSuccess"
         }
 

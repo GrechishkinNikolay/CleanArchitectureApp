@@ -1,5 +1,5 @@
 package ru.ngrechishkin.cleanarchitectureapp.data.storage.models
 
-class User(val firstName: String, val lastName: String) {
+class UserEntity(val firstName: String, val lastName: String) {
 
 }
