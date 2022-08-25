@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-08-25T12:36:52.677Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.167 YaBrowser/22.7.3.822 Yowser/2.5 Safari/537.36" etag="VpMGCX1VWXYbT6wI1gWB" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-25T17:39:14.300Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.167 YaBrowser/22.7.3.822 Yowser/2.5 Safari/537.36" etag="fRKUpXpYW4DfMy7ND_zs" version="20.2.7" type="github">
   <diagram id="FxbBOhZpKZ78KxR6CiaQ" name="Страница 1">
-    <mxGraphModel dx="1422" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -83,8 +83,14 @@
             <mxRectangle x="74" y="910" width="120" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="avO0BbSKwXRxkocZSk6n-11" value="Activity" style="rounded=0;whiteSpace=wrap;html=1;" parent="0TRH_SJdCE5K34F3zOqi-9" vertex="1">
-          <mxGeometry x="283" y="50" width="120" height="180" as="geometry" />
+        <mxCell id="avO0BbSKwXRxkocZSk6n-11" value="ViewModel" style="rounded=0;whiteSpace=wrap;html=1;" parent="0TRH_SJdCE5K34F3zOqi-9" vertex="1">
+          <mxGeometry x="282.75" y="50" width="120.5" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eJK_iEI-q1gPDxuFscSx-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="0TRH_SJdCE5K34F3zOqi-9" source="eJK_iEI-q1gPDxuFscSx-1" target="avO0BbSKwXRxkocZSk6n-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eJK_iEI-q1gPDxuFscSx-1" value="Activity" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0TRH_SJdCE5K34F3zOqi-9">
+          <mxGeometry x="496" y="50" width="120" height="180" as="geometry" />
         </mxCell>
         <mxCell id="0TRH_SJdCE5K34F3zOqi-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="avO0BbSKwXRxkocZSk6n-1" target="avO0BbSKwXRxkocZSk6n-11" edge="1">
           <mxGeometry relative="1" as="geometry">
