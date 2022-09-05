@@ -47,7 +47,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     def lifecycle_version = "2.6.0-alpha01"
-    def arch_version = "2.1.0"
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -68,8 +67,9 @@ dependencies {
 
     def dagger2_version = "2.43.2"
     implementation "com.google.dagger:dagger:$dagger2_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2_version"
-    
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+
+//    def arch_version = "2.1.0"
 //    // Saved state module for ViewModel
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 //

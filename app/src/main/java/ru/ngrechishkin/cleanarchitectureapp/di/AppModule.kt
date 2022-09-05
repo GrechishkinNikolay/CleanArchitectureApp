@@ -1,11 +1,29 @@
 package ru.ngrechishkin.cleanarchitectureapp.di
 
+import android.content.Context
 import dagger.Module
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.module
-import ru.ngrechishkin.cleanarchitectureapp.presentation.MainViewModel
+import dagger.Provides
+import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.GetUserNameUseCase
+import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.SaveUserNameUseCase
+import ru.ngrechishkin.cleanarchitectureapp.presentation.MainViewModelFactory
 
 @Module
-class AppModule {
+class AppModule(val context: Context) {
+
+    @Provides
+    fun provideContext(): Context {
+        return context
+    }
+
+//    @Provides
+//    fun provideMainViewModelFactory(
+//        getUserNameUseCase: GetUserNameUseCase,
+//        saveUserNameUseCase: SaveUserNameUseCase
+//    ): MainViewModelFactory {
+//        return MainViewModelFactory(
+//            getUserNameUseCase = getUserNameUseCase,
+//            saveUserNameUseCase = saveUserNameUseCase
+//        )
+//    }
 
 }
