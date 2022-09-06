@@ -6,8 +6,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import dagger.hilt.EntryPoint
 import ru.ngrechishkin.cleanarchitectureapp.R
 
+@EntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
