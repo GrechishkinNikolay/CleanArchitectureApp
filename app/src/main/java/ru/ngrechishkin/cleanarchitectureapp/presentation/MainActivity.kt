@@ -8,9 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 import ru.ngrechishkin.cleanarchitectureapp.R
 
-@EntryPoint
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()

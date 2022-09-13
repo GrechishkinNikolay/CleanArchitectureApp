@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ru.ngrechishkin.cleanarchitectureapp.domain.models.UserNameSaveDTO
 import ru.ngrechishkin.cleanarchitectureapp.domain.usecase.GetUserNameUseCase
